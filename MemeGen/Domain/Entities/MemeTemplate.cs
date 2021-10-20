@@ -8,6 +8,10 @@ namespace MemeGen.Domain.Entities
 
         public string Name { get; set; }
 
-        public Polygon TextRectangleLocation { get; set; }
+        public Point TextRectangleOrigin { get; set; }
+
+        public int TextRectangleMaxWidth { get; set; }
+
+        public int TextRectangleMaxHeight { get; set; }
     }
 }
