@@ -1,3 +1,6 @@
+using System.Text.Json.Serialization;
+using MemeGen.Application.Repositories;
+using MemeGen.Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +36,8 @@ namespace MemeGen
                     m => m.UseNetTopologySuite())
                 );
 
+            services.AddTransient<IMemeService, MemeService>();
+            services.AddTransient<IMemeRepository, MemeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
